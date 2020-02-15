@@ -9,7 +9,7 @@ export default class CarouselContainer extends React.Component {
             xPos: 0,
             mouseDown: false,
             mouseUp: true,
-            items: ["1",  "2", "3"],
+            items: ["1",  "2", "3", "4", "5", "6", "7", "8", "9", "10"],
             offset: 0,
             transition: false,
         }
@@ -43,12 +43,6 @@ export default class CarouselContainer extends React.Component {
         }))
     }
 
-    setXPos(value) {
-        this.setState({
-            xPos: value,
-        })
-    }
-
     setDirection(newXpos) {
         this.setState({
             xPos: newXpos
@@ -58,13 +52,13 @@ export default class CarouselContainer extends React.Component {
     render() {
         const { items, mouseDown, mouseUp, transition, xPos, offset } = this.state;
         return (
-            <div className="CarouselContainer">
+ 
                 <Carousel 
                     setMouseDown={this.setMouseDown.bind(this)} 
                     setMouseUp={this.setMouseUp.bind(this)}
                     mouseDown={mouseDown}
                     mouseUp={mouseUp}
-                    setXPos={this.setXPos.bind(this)}
+                   
                     items={ items } 
                     xPos={xPos}
                     offset={offset}
@@ -72,7 +66,7 @@ export default class CarouselContainer extends React.Component {
                     setTransition={this.setTransition.bind(this)}
                     setOffset={this.setOffset.bind(this)}
                 />
-            </div>
+
         )
     }
 }

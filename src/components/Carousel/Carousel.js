@@ -4,7 +4,6 @@ import CarouselItem from '../CarouselItem/CarouselItem';
 export default ( { items, xPos, offset, setTransition, transition, setOffset, setMouseDown, setMouseUp, mouseDown, mouseUp } ) => {
     
     const handleMouseDown=(e) => {
-
         setMouseDown(e.pageX);
     }
 
@@ -17,21 +16,18 @@ export default ( { items, xPos, offset, setTransition, transition, setOffset, se
     }
 
     const handleMouseMove=(e) => {
-        if(mouseDown && !mouseUp) {
-
+        if(mouseDown && !mouseUp && !transition ) {
             const diff = e.pageX - xPos; 
-
-            if(Math.abs(diff) > 20 && !transition ){
-             
+            if(Math.abs(diff) > 10 ){
                 if (diff > 0 ) {
-                    setOffset(100)
+                    setOffset(300)
                 } else if (diff < 0) {
-                    setOffset(-100)
+                    setOffset(-300)
                 }
                 handleTransitionEnd(true);
             }
-            
-            
+        } else if(mouseDown && !mouseUp && transition) {
+            setMouseUp();
         }
     }
     
@@ -45,12 +41,27 @@ export default ( { items, xPos, offset, setTransition, transition, setOffset, se
             style={{
                 fontSize: '100px',
                 transform: `translateX(${offset}px)`,
-                transition: 'all 0.2s',
+                transition: 'all 0.3s',
+                transitionTimingFunction: 'ease-in-out',
             }}
         >
-            { items.map( (item, idx) => (
-                <CarouselItem key={idx} name={ item }/>
-            ))}
+            <div className="CarouselContainer-Carousel-item"
+                
+            ></div>
+            <div className="CarouselContainer-Carousel-item"
+                     
+            ></div>
+            <div className="CarouselContainer-Carousel-item"
+                     
+            ></div>
+            <div className="CarouselContainer-Carousel-item"
+                    
+            ></div>
+            <div className="CarouselContainer-Carousel-item"
+                    
+            ></div>
+
+
             
         </div>
     );

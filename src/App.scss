@@ -62,22 +62,25 @@ body{
   width: 80%;
   margin: 0 auto;
   margin-top: 40px;
-  height: 100px;
+  height: 400px;
   padding: 10px;
-  background-color: rgb(190, 190, 190);
+  background-color: rgb(233, 232, 232);
   overflow: hidden;
 
   &-Carousel {
-
-    width: 100%;
+    width: 80%;
     height: 100%;
-    background: #1c92d2;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    // background: #1c92d2;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to right, #f2fcfe, #1c92d2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
     &-item {
-      width: 80px;
-      height: 80px;
+      min-width: 400px;
+      height: 350px;
+      background-color: rgb(36, 36, 36);
       border: 1px solid rgb(212, 212, 212);
       display: inline-block;
       margin-right: 10px 
