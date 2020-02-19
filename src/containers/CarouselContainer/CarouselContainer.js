@@ -9,7 +9,18 @@ export default class CarouselContainer extends React.Component {
             xPos: 0,
             mouseDown: false,
             mouseUp: true,
-            items: ["1",  "2", "3", "4", "5", "6", "7", "8", "9", "10"],
+            items: [
+                    "1",  
+                    "2", 
+                    "3", 
+                    "4", 
+                    "5", 
+                    "6", 
+                    "7", 
+                    "8", 
+                    "9", 
+                    "10"
+                ],
             offset: 0,
             transition: false,
         }
@@ -37,7 +48,6 @@ export default class CarouselContainer extends React.Component {
     }
 
     setOffset(value) {
-        
         this.setState(prevState => ({
             offset: prevState.offset + value,
         }))
@@ -49,24 +59,33 @@ export default class CarouselContainer extends React.Component {
         })
     }
 
+    visualConfig() {
+        return {
+            fontSize: '100px',
+            transform: `translateX(${this.state.offset}px)`,
+            transition: 'all 0.3s',
+            transitionTimingFunction: 'ease-in-out',
+        }
+    }
+
     render() {
         const { items, mouseDown, mouseUp, transition, xPos, offset } = this.state;
         return (
- 
+            <div className="CarouselContainer">
                 <Carousel 
                     setMouseDown={this.setMouseDown.bind(this)} 
                     setMouseUp={this.setMouseUp.bind(this)}
                     mouseDown={mouseDown}
                     mouseUp={mouseUp}
-                   
                     items={ items } 
                     xPos={xPos}
                     offset={offset}
                     transition={transition}
                     setTransition={this.setTransition.bind(this)}
                     setOffset={this.setOffset.bind(this)}
+                    visualConfig={this.visualConfig()}
                 />
-
+            </div>
         )
     }
 }
