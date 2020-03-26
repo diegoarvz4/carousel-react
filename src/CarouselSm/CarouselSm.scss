@@ -1,0 +1,45 @@
+@mixin container-config {
+  // height: 200px;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+}
+
+@mixin rail-config {
+  // height: 90%;
+  display: flex;
+  width: 80%;
+  margin: 10px auto;
+  background-color: gray;
+}
+
+@mixin item-config {
+  // height: 120px;
+  width: 25%;
+  background-color: blue;
+}
+
+@mixin block-helper-border {
+  border: 1px solid black;
+}
+
+
+.CarouselSm {
+  &__Container{
+    display: block;
+    @include block-helper-border;
+    @include container-config;
+  }
+
+  &__Rail {
+    display: block;
+    @include block-helper-border;
+    @include rail-config;
+  }
+
+  &__Item {
+    display: inline-block;
+    @include block-helper-border;
+    @include item-config;
+  }
+}
