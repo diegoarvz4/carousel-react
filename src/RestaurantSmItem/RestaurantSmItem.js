@@ -19,38 +19,35 @@ export default React.memo( props =>
 
     return (
       <div className='RestaurantItem'>
-        <img src={img} alt={title} className='RestaurantItem__IMG' />
-        <div className="d-flex justify-content-between">
-            <div className="restaurants__info">
-                <p className="text-truncate restaurants__name">{title}</p>
-                <p className="restaurants__price">
-                  {`Precio promedio: ${price} mxn / persona`}
-                </p>
-                <div className="d-flex restaurants__details mt-1">
-                    <div className="d-flex align-items-center">
-                        <img src={restaurantIcon} alt="Restaurant" />
-                        <p className="pl-1">{category}</p>
-                    </div>
-                    <div className="d-flex align-items-center restaurantes__item--detalles ml-2">
-                        <img src={barIcon} alt="" />
-                        <p className="pl-1">Bar</p>
-                    </div>
-                </div>
-            </div>
-            <div className="restaurants__rating">
-                <div className="d-flex justify-content-end">
-                    <img src={starIcon} alt="" className="pr-1" />
-                    <p><span className="bold">{rank}</span> {`(${reviews})`}</p>
-                </div>
-                <div className="d-flex justify-content-end">
-                    <img src={medalIcon} alt="" />
-                    <p className="luxury">Super</p>
-                </div>
-                <div className="d-flex justify-content-end">
-                    <p className="luxury">luxury</p>
-                </div>
-            </div>
+        <img src={img} alt={title} className='RestaurantItem__IMG' draggable="false" />
+        
+        <div className='RestaurantItem__Description'>
+          <h2>{title}</h2>
+          <span className="RestaurantItem__Description__Price">
+            {`Precio promedio: ${price} mxn / persona`}
+          </span>
+          <div className="RestaurantItem__Description__Category">
+            <img src={restaurantIcon} alt="Restaurant" />
+            <span>{category}</span>
+          </div>
         </div>
+
+        <div className='RestaurantItem__Stats'>
+          <div className='RestaurantItem__Stats__RankAndReviews'>
+            <img src={starIcon} alt='' className='' />
+            <p><span className="bold">{rank}</span>{`(${reviews})`}</p>
+          </div>
+          <div className='RestaurantItem__Stats__Grade'>
+            <div className='RestaurantItem__Stats__Grade__Level'>
+              <img src={medalIcon} alt="" />
+              <p className="luxury">{'Super'}</p>
+            </div>
+            <p className='RestaurantItem__Stats__Grade__Class'>
+              { 'Luxury' }
+            </p>
+          </div>
+        </div>
+
       </div>
     )
   } 
