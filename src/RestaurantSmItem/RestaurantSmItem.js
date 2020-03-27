@@ -2,7 +2,6 @@ import React from 'react';
 import './RestaurantSmItem.scss';
 
 import restaurantIcon from '../assets/icons/icon-restaurant.svg';
-import barIcon from '../assets/icons/icon-bar.svg'
 import starIcon from '../assets/icons/icon-estrella.svg';
 import medalIcon from '../assets/icons/icon-medalla.svg';
 

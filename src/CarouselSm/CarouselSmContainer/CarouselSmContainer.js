@@ -1,6 +1,5 @@
 import React, { useReducer } from 'react';
 import CarouselSmItem from './CarouselSmItem/CarouselSmItem';
-import RestaurantSmItem from '../../RestaurantSmItem/RestaurantSmItem';
 
 import '../CarouselSm.scss'
 
@@ -62,6 +61,7 @@ export default React.memo((
       carouselTransitionSpeed, 
       carouselTransitionTimingFunction,
       carouselOffset,
+      carouselItem
     }
   ) => { 
   const [carouselState, carouselDispatch] = useReducer(mouseEventReducer, {
@@ -157,7 +157,7 @@ export default React.memo((
            const properties = {...item}
            return (
              <div className="CarouselSm__Item" key={item.id}>
-               {CarouselSmItem(RestaurantSmItem, properties)}
+               {CarouselSmItem(carouselItem, properties)}
              </div>
            )
          })

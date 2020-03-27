@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import CarouselSmContainer from './CarouselSm/CarouselSmContainer/CarouselSmContainer';
 import CarouselControls from './CarouselSm/CarouselControls/CarouselControls';
 
+import RestaurantSmItem from './RestaurantSmItem/RestaurantSmItem';
+
 import items from './Items/Items';
 
 import './App.scss';
@@ -28,6 +30,7 @@ const App = () => {
           carouselTransitionSpeed={parseFloat(transitionSeped)}
           carouselTransitionTimingFunction={transitionTimingFunction}
           carouselOffset={parseInt(offset)}
+          carouselItem={RestaurantSmItem}
         />
       </section>
     </div>
